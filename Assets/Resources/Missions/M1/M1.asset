@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: M1
   m_EditorClassIdentifier: 
   firtsNode: {fileID: 11400000, guid: fb8662ddaece52d4996d629ea9a4e5b8, type: 2}
-  nodeActual: {fileID: 0}
+  nodeActual: {fileID: 11400000, guid: fb8662ddaece52d4996d629ea9a4e5b8, type: 2}
   state: 
   limitDay: 3
   startDay: 1

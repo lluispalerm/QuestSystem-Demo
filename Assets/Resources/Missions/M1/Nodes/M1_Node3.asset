@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNode: []
   extraText: {fileID: 0}
-  objectsActivated: []
+  objectsActivated:
+  - {fileID: 0}
+  - {fileID: 0}
   isFinal: 1
   nodeObjectives:
   - keyName: kill
@@ -23,13 +25,13 @@ MonoBehaviour:
     actualItems: 0
     description: 'Betray your best friend: Triangle'
     hiddenObjective: 0
-    autoExitOnCompleted: 0
+    autoExitOnCompleted: 1
   - keyName: noKill
     isCompleted: 0
     maxItems: 1
     actualItems: 0
     description: 'Betray the sexy devil that is evil triangle  '
     hiddenObjective: 0
-    autoExitOnCompleted: 0
+    autoExitOnCompleted: 1
   GUID: c587ebf7-7578-4a22-a332-3c7d6e4bc571
-  position: {x: 1247, y: 378}
+  position: {x: 1256, y: 540}

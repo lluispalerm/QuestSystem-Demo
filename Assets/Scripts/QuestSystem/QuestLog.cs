@@ -32,7 +32,7 @@ namespace QuestSystem
 
             foreach (QuestSaveData qs in qls.currentQuestSave)
             {
-                Quest q = Resources.Load("Misiones/" + qs.name + "/" + qs.name) as Quest;
+                Quest q = Resources.Load(QuestConstants.MISIONS_NAME + "/" + qs.name + "/" + qs.name) as Quest;
                 q.state = qs.states;
                 q.AdvanceToCurrentNode();
                 q.nodeActual.nodeObjectives = qs.actualNodeData.objectives;
@@ -45,7 +45,7 @@ namespace QuestSystem
 
             foreach (QuestSaveData qs in qls.doneQuestSave)
             {
-                Quest q = Resources.Load("Misiones/" + qs.name + "/" + qs.name) as Quest;
+                Quest q = Resources.Load(QuestConstants.MISIONS_NAME + "/" + qs.name + "/" + qs.name) as Quest;
                 doneQuest.Add(q);
             }
 
@@ -53,7 +53,7 @@ namespace QuestSystem
 
             foreach (QuestSaveData qs in qls.failedQuestSave)
             {
-                Quest q = Resources.Load("Misiones/" + qs.name + "/" + qs.name) as Quest;
+                Quest q = Resources.Load(QuestConstants.MISIONS_NAME + "/" + qs.name + "/" + qs.name) as Quest;
                 failedQuest.Add(q);
             }
         }

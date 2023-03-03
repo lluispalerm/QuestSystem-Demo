@@ -17,12 +17,12 @@ MonoBehaviour:
   objectsActivated: []
   isFinal: 1
   nodeObjectives:
-  - keyName: Talk
+  - keyName: pathEvil
     isCompleted: 0
     maxItems: 1
     actualItems: 0
-    description: Have a happy ending with Triangle
-    hiddenObjective: 0
+    description: Have a happy ending with triangle
+    hiddenObjective: 1
     autoExitOnCompleted: 0
   GUID: 20c922bb-a810-4da4-a6d5-d2eda0753ecd
   position: {x: 1247, y: 74}

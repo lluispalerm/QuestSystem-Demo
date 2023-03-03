@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace QuestSystem.QuestEditor
 {
-    [CustomEditor(typeof(QuestUpdater))]
-    public class QuestUpdaterEditor : Editor
+    [CustomEditor(typeof(QuestObjectiveUpdater))]
+    public class QuestObjectiveUpdaterEditor : Editor
     {           
         private int selectedValue = 0;
         private string previousKey = "";
@@ -18,7 +18,7 @@ namespace QuestSystem.QuestEditor
 
         public override void OnInspectorGUI()
         {
-            QuestUpdater qU = (QuestUpdater)target;
+            QuestObjectiveUpdater qU = (QuestObjectiveUpdater)target;
             GUIContent objectFieldLabel = new GUIContent("Hola");
             Rect commonRect = new Rect(new Vector2(20,344), new Vector2(EditorGUIUtility.currentViewWidth - marginX, 20));
             DrawDefaultInspector();

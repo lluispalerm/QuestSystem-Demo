@@ -19,13 +19,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   isFinal: 0
   nodeObjectives:
   - keyName: PickFlowers
     isCompleted: 0
     maxItems: 3
     actualItems: 0
-    description: Grab flowers for Triangle
+    description: Grab yellow flowers for Triangle
+    hiddenObjective: 0
+    autoExitOnCompleted: 0
+  - keyName: PickFlowers2
+    isCompleted: 0
+    maxItems: 1
+    actualItems: 0
+    description: And 1 rose becouse is cute
     hiddenObjective: 0
     autoExitOnCompleted: 0
   GUID: 07ece3af-224e-441d-b153-f97fdf957708

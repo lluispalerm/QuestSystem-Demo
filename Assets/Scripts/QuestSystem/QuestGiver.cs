@@ -26,6 +26,7 @@ namespace QuestSystem
             questManagerRef.AddMisionToCurrent(questToGive);
 
             questAlreadyGiven = true;
+            QuestManager.GetInstance().Save();
         }
 
         public void showDialogue()

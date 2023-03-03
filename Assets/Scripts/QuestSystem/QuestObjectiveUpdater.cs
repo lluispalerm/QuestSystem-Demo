@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace QuestSystem
 {
-    public class QuestUpdater : MonoBehaviour, IQuestInteraction
+    public class QuestObjectiveUpdater : MonoBehaviour, IQuestInteraction
     {
         public Quest questToUpdate;
         [HideInInspector] public NodeQuest nodeToUpdate;
@@ -34,7 +34,6 @@ namespace QuestSystem
 
         public void updateQuest()
         {
-            // QUE COJONES PASO AQUI
             //Afegir instancies al objectiu
             if (!string.IsNullOrEmpty(keyObjectiveSelected)) {
                 QuestObjective questObjective = new QuestObjective();
@@ -52,9 +51,8 @@ namespace QuestSystem
 
                 questObjective.actualItems += adder;
 
-                if (questObjective.actualItems >= questObjective.maxItems)
+                if (IsNodeCompleted(questObjective))
                 {
-                    questObjective.isCompleted = true;
                     if (nodeToUpdate.isFinal)
                     {
                         questToUpdate.nodeActual.changeTheStateOfObjects(false);
@@ -68,9 +66,11 @@ namespace QuestSystem
                         Debug.Log("Exit :" + exit + ", Next node: " + nodeToUpdate.nextNode.Count);
                         questToUpdate.nodeActual = nodeToUpdate.nextNode[exit];
                         questToUpdate.nodeActual.changeTheStateOfObjects(true);
+                        
                     }
 
                     eventsOnFinish.Invoke();
+                    QuestManager.GetInstance().Save();
                 }
 
                 eventsOnUpdate.Invoke();
@@ -161,6 +161,25 @@ namespace QuestSystem
             {
                 StartCoroutine(ShowDialogue());
             }
+        }
+
+        private bool IsNodeCompleted(QuestObjective questObjective)
+        {
+            if (questObjective.actualItems >= questObjective.maxItems)
+            {
+                questObjective.isCompleted = true;
+                if(questObjective.autoExitOnCompleted) return true;
+            }
+
+            for (int i = 0; i < nodeToUpdate.nodeObjectives.Length; i++)
+            {
+                if (!nodeToUpdate.nodeObjectives[i].isCompleted && !nodeToUpdate.nodeObjectives[i].autoExitOnCompleted)
+                {
+                    return false;
+                }
+            } 
+
+            return true;
         }
     }
 }

@@ -11,24 +11,24 @@ namespace QuestSystem.SaveSystem
     {
         public static string GetPath(string saveName)
         {
-            return Application.persistentDataPath + "/saves/" + saveName + ".save";
+            return QuestConstants.SAVE_FILE_FOLDER + "/" + saveName + ".save";
         }
 
-        public static bool Save(string saveName, object saveData)
+        public static bool Save(object saveData)
         {
             BinaryFormatter formatter = GetBinaryFormater();
 
-            if (!Directory.Exists(Application.persistentDataPath + "/saves"))
+            if (!Directory.Exists(QuestConstants.SAVE_FILE_FOLDER))
             {
-                Directory.CreateDirectory(Application.persistentDataPath + "/saves");
+                Directory.CreateDirectory(QuestConstants.SAVE_FILE_FOLDER);
             }
 
-            string path = GetPath(saveName);
+            string path = QuestConstants.SAVE_FILE_PATH;
             Debug.Log(path);
             FileStream file = File.Create(path);
 
             formatter.Serialize(file, saveData);
-            Debug.Log("Saveado");
+            Debug.Log("Saved");
             file.Close();
 
             return true;
@@ -44,25 +44,24 @@ namespace QuestSystem.SaveSystem
             FileStream file = File.Open(path, FileMode.Open);
             try
             {
-                Debug.Log("Si no se ve la patata es que peta al abrirse");
                 object save = formatter.Deserialize(file);
-                Debug.Log("patata");
                 file.Close();
-                Debug.Log("Loadeado");
+                Debug.Log("Loaded");
                 return save;
             }
             catch
             {
-                Debug.LogErrorFormat("Faled to load fiale at {0}", path);
+                Debug.LogErrorFormat("Faled to load file at {0}", path);
                 file.Close();
                 return null;
             }
         }
 
+        /*
         public static object LoadFromName(string saveName)
         {
             return Load(GetPath(saveName));
-        }
+        }*/
 
         public static BinaryFormatter GetBinaryFormater()
         {

@@ -12,8 +12,10 @@ namespace QuestSystem
         public static readonly string MISIONS_NAME = "Missions";
         public static readonly string PARENT_PATH = "Assets";
         public static readonly string SAVE_FILE_PATH = Application.persistentDataPath + "/saves/" + "savefile" + ".save";
+        public static readonly string SAVE_FILE_FOLDER = Application.persistentDataPath + "/saves";
         public static readonly string QUEST_LOG_NAME = "TheQuestLog";
         public static readonly string NODES_TEMP_FOLDER_NAME = "NodesTemp";
+        public static readonly string NODES_FOLDER_NAME = "Nodes";
     }
 }
 

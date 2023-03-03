@@ -62,13 +62,15 @@ public class PlayerSimple : MonoBehaviour
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius, Physics.AllLayers, QueryTriggerInteraction.Collide);
             if(hitColliders.Length > 0)
             {
-                
                 for (int i = 0; i < hitColliders.Length; i++)
                 {
-                    IQuestInteraction interact = hitColliders[i].GetComponent<IQuestInteraction>();
-                    if (interact != null)
+                    IQuestInteraction[] interactions = hitColliders[i].GetComponents<IQuestInteraction>();
+                    if(interactions.Length > 0)
                     {
-                        interact.Interact();
+                        for (int j = 0; j < interactions.Length; j++)
+                        {
+                            interactions[j].Interact();
+                        }
                     }
                 }
             }

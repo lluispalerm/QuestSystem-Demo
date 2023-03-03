@@ -13,6 +13,11 @@ namespace QuestSystem.QuestEditor
         {
             QuestOnObjectWorld qOW = (QuestOnObjectWorld)target;
 
+            if (GUILayout.Button("Get all Nodes from Quest"))
+            {
+                qOW.GetAllNodesFromQuest();
+            }
+
             DrawDefaultInspector();
 
             if (GUILayout.Button("Populate with children"))

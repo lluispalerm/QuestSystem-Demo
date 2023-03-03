@@ -72,13 +72,13 @@ namespace QuestSystem
         {
             //Comprovar que se guarde compilado
 #if !UNITY_EDITOR
-            data = new QuestLogSaveData(misonLog);
-            QuestSaveSystem.Save("save1", data);
+            data = new QuestLogSaveData(misionLog);
+            QuestSaveSystem.Save(data);
 #endif
         }
 
 
-        
+
         /// <summary>
         /// Formats the current mision information like this:
         /// Mision Name /n
