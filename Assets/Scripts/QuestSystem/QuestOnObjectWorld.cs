@@ -31,6 +31,8 @@ namespace QuestSystem
             questManagerRef = QuestManager.GetInstance();
         }
 
+
+
         void Start()
         {
             //Default: every object is disabled

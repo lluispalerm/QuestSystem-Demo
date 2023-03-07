@@ -28,7 +28,7 @@ namespace QuestSystem
             }
         }
 
-        public void changeTheStateOfObjects(bool b)
+        public void ChangeTheStateOfObjects(bool b)
         {
             foreach (GameObject g in objectsActivated)
             {

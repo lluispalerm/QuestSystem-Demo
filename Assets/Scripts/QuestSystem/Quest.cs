@@ -22,8 +22,6 @@ namespace QuestSystem
         [Header("Graph Part")]
         public List<NodeLinksGraph> nodeLinkData;
 
-
-
         [System.Serializable]
         public class NodeLinksGraph
         {
@@ -61,6 +59,9 @@ namespace QuestSystem
             {
                 nodeActual = nodeActual.nextNode[i];
             }
+
+
+        
         }
 
         public void ResetNodeLinksGraph()

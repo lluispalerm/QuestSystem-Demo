@@ -55,17 +55,17 @@ namespace QuestSystem
                 {
                     if (nodeToUpdate.isFinal)
                     {
-                        questToUpdate.nodeActual.changeTheStateOfObjects(false);
+                        questToUpdate.nodeActual.ChangeTheStateOfObjects(false);
                         questManagerRef.DonearQuest(questToUpdate);
                         isDone = true;
                     }
                     else
                     {
-                        questToUpdate.nodeActual.changeTheStateOfObjects(false);
+                        questToUpdate.nodeActual.ChangeTheStateOfObjects(false);
                         questToUpdate.state.Add(exit);
                         Debug.Log("Exit :" + exit + ", Next node: " + nodeToUpdate.nextNode.Count);
                         questToUpdate.nodeActual = nodeToUpdate.nextNode[exit];
-                        questToUpdate.nodeActual.changeTheStateOfObjects(true);
+                        questToUpdate.nodeActual.ChangeTheStateOfObjects(true);
                         
                     }
 

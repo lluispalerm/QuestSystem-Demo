@@ -45,7 +45,7 @@ namespace QuestSystem
         public void AddMisionToCurrent(Quest q)
         {
             q.nodeActual = q.firtsNode;
-            q.nodeActual.changeTheStateOfObjects(true);
+            q.nodeActual.ChangeTheStateOfObjects(true);
             misionLog.curentQuests.Add(q);
         }
 
