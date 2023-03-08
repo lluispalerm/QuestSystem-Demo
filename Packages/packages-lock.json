@@ -226,10 +226,11 @@
       "url": "https://packages.unity.com"
     },
     "questsystem": {
-      "version": "file:QuestSystem",
+      "version": "https://github.com/lluispalerm/QuestSystem.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "1ac394a80e30fdc9343345bc8469128c6dc6cff2"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
